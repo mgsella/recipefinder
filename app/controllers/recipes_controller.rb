@@ -61,6 +61,38 @@ class RecipesController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @recipe = Recipe.find(params.fetch("id_to_remove"))
+
+    @recipe.destroy
+
+    redirect_to("/users/#{@recipe.user_id}", notice: "Recipe deleted successfully.")
+  end
+
+  def destroy_row_from_cuisine
+    @recipe = Recipe.find(params.fetch("id_to_remove"))
+
+    @recipe.destroy
+
+    redirect_to("/cuisines/#{@recipe.cuisine_id}", notice: "Recipe deleted successfully.")
+  end
+
+  def destroy_row_from_preparation
+    @recipe = Recipe.find(params.fetch("id_to_remove"))
+
+    @recipe.destroy
+
+    redirect_to("/preparations/#{@recipe.preparation_id}", notice: "Recipe deleted successfully.")
+  end
+
+  def destroy_row_from_food
+    @recipe = Recipe.find(params.fetch("id_to_remove"))
+
+    @recipe.destroy
+
+    redirect_to("/categories/#{@recipe.food_id}", notice: "Recipe deleted successfully.")
+  end
+
   def destroy_row
     @recipe = Recipe.find(params.fetch("id_to_remove"))
 
