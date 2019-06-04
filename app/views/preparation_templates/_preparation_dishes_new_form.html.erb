@@ -50,7 +50,7 @@
     </label>
 
     <!-- Input for food_id start -->
-    <input type="text" id="food_id" name="food_id" class="form-control" value="<%= @recipe.food_id %>">
+    <%= select_tag(:food_id, options_from_collection_for_select(Category.all, :id, :name, @recipe.food_id), :class => "form-control") %>
     <!-- Input for food_id end -->
   </div>
   <!-- Label and input for food_id end -->
