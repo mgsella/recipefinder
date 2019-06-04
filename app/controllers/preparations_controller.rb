@@ -1,6 +1,7 @@
 class PreparationsController < ApplicationController
   def index
-    @preparations = Preparation.page(params[:page]).per(10)
+    @q = Preparation.ransack(params[:q])
+    @preparations = @q.result(:distinct => true).includes(:dishes).page(params[:page]).per(10)
 
     render("preparation_templates/index.html.erb")
   end
