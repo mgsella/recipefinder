@@ -33,7 +33,7 @@
     </label>
 
     <!-- Input for preparation_id start -->
-    <input type="text" id="preparation_id" name="preparation_id" class="form-control" value="<%= @recipe.preparation_id %>">
+    <%= select_tag(:preparation_id, options_from_collection_for_select(Preparation.all, :id, :name, @recipe.preparation_id), :class => "form-control") %>
     <!-- Input for preparation_id end -->
   </div>
   <!-- Label and input for preparation_id end -->
