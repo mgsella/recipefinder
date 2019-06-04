@@ -6,6 +6,7 @@ class PreparationsController < ApplicationController
   end
 
   def show
+    @recipe = Recipe.new
     @preparation = Preparation.find(params.fetch("id_to_display"))
 
     render("preparation_templates/show.html.erb")

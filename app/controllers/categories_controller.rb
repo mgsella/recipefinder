@@ -6,6 +6,8 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @recipe = Recipe.new
+    @favorite = Favorite.new
     @category = Category.find(params.fetch("id_to_display"))
 
     render("category_templates/show.html.erb")

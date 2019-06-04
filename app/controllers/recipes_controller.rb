@@ -36,6 +36,63 @@ class RecipesController < ApplicationController
     end
   end
 
+  def create_row_from_cuisine
+    @recipe = Recipe.new
+
+    @recipe.link = params.fetch("link")
+    @recipe.cuisine_id = params.fetch("cuisine_id")
+    @recipe.preparation_id = params.fetch("preparation_id")
+    @recipe.cook_time = params.fetch("cook_time")
+    @recipe.food_id = params.fetch("food_id")
+    @recipe.user_id = params.fetch("user_id")
+
+    if @recipe.valid?
+      @recipe.save
+
+      redirect_to("/cuisines/#{@recipe.cuisine_id}", notice: "Recipe created successfully.")
+    else
+      render("recipe_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_preparation
+    @recipe = Recipe.new
+
+    @recipe.link = params.fetch("link")
+    @recipe.cuisine_id = params.fetch("cuisine_id")
+    @recipe.preparation_id = params.fetch("preparation_id")
+    @recipe.cook_time = params.fetch("cook_time")
+    @recipe.food_id = params.fetch("food_id")
+    @recipe.user_id = params.fetch("user_id")
+
+    if @recipe.valid?
+      @recipe.save
+
+      redirect_to("/preparations/#{@recipe.preparation_id}", notice: "Recipe created successfully.")
+    else
+      render("recipe_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_category
+    @recipe = Recipe.new
+
+    @recipe.link = params.fetch("link")
+    @recipe.cuisine_id = params.fetch("cuisine_id")
+    @recipe.preparation_id = params.fetch("preparation_id")
+    @recipe.cook_time = params.fetch("cook_time")
+    @recipe.food_id = params.fetch("food_id")
+    @recipe.user_id = params.fetch("user_id")
+
+    if @recipe.valid?
+      @recipe.save
+
+      redirect_to("/categories/#{@recipe.food_id}", notice: "Recipe created successfully.")
+    else
+      render("recipe_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @recipe = Recipe.find(params.fetch("prefill_with_id"))
 
