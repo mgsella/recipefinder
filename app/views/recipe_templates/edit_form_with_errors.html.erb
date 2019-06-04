@@ -1,0 +1,101 @@
+<!-- Validation failure messages -->
+<% if @recipe.errors.any? %>
+  <% @recipe.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit recipe #<%= @recipe.id %>
+</h1>
+
+<hr>
+
+<!-- Form recipe start -->
+<form action="/update_recipe/<%= @recipe.id %>" method="post">
+<!-- Form recipe end -->
+
+  <!-- Label and input for link start -->
+  <div class="form-group">
+    <label for="link">
+      Link
+    </label>
+
+    <!-- Input for link start -->
+    <input type="text" id="link" name="link" class="form-control" value="<%= @recipe.link %>">
+    <!-- Input for link end -->
+  </div>
+  <!-- Label and input for link end -->
+
+  <!-- Label and input for cuisine_id start -->
+  <div class="form-group">
+    <label for="cuisine_id">
+      Cuisine
+    </label>
+
+    <!-- Input for cuisine_id start -->
+    <input type="text" id="cuisine_id" name="cuisine_id" class="form-control" value="<%= @recipe.cuisine_id %>">
+    <!-- Input for cuisine_id end -->
+  </div>
+  <!-- Label and input for cuisine_id end -->
+
+  <!-- Label and input for preparation_id start -->
+  <div class="form-group">
+    <label for="preparation_id">
+      Preparation
+    </label>
+
+    <!-- Input for preparation_id start -->
+    <input type="text" id="preparation_id" name="preparation_id" class="form-control" value="<%= @recipe.preparation_id %>">
+    <!-- Input for preparation_id end -->
+  </div>
+  <!-- Label and input for preparation_id end -->
+
+  <!-- Label and input for cook_time start -->
+  <div class="form-group">
+    <label for="cook_time">
+      Cook time
+    </label>
+
+    <!-- Input for cook_time start -->
+    <input type="text" id="cook_time" name="cook_time" class="form-control" value="<%= @recipe.cook_time %>">
+    <!-- Input for cook_time end -->
+  </div>
+  <!-- Label and input for cook_time end -->
+
+  <!-- Label and input for food_id start -->
+  <div class="form-group">
+    <label for="food_id">
+      Food
+    </label>
+
+    <!-- Input for food_id start -->
+    <input type="text" id="food_id" name="food_id" class="form-control" value="<%= @recipe.food_id %>">
+    <!-- Input for food_id end -->
+  </div>
+  <!-- Label and input for food_id end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @recipe.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update recipe
+  </button>
+</form>
+
+<hr>
+
+<a href="/recipes">
+  Go back
+</a>
