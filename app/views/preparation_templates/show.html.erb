@@ -11,58 +11,46 @@
         </a>
       </div>
 
-      <!-- Edit link preparation start -->
       <div class="col">
         <a href="/preparations/<%= @preparation.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit preparation
         </a>
       </div>
-      <!-- Edit link preparation end -->
 
-      <!-- Delete link preparation start -->
       <div class="col">
         <a href="/delete_preparation/<%= @preparation.id %>" class="btn btn-block btn-outline-secondary">
           Delete preparation
         </a>
       </div>
-      <!-- Delete link preparation end -->
     </div>
 
     <dl>
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @preparation.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@preparation.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@preparation.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "preparation_templates/preparation_dishes" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

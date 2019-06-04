@@ -4,24 +4,16 @@
 
 <hr>
 
-<!-- Form favorite start -->
 <form action="/update_favorite/<%= @favorite.id %>" method="post">
-<!-- Form favorite end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for category_id start -->
   <div class="form-group">
     <label for="category_id">
       Category
     </label>
 
-    <!-- Input for category_id start -->
     <%= select_tag(:category_id, options_from_collection_for_select(Category.all, :id, :name, @favorite.category_id), :class => "form-control") %>
-    <!-- Input for category_id end -->
   </div>
-  <!-- Label and input for category_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update favorite
