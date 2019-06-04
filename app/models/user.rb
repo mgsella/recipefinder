@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :dishes,
+             :class_name => "Recipe",
+             :dependent => :destroy
+
   has_many   :favorites,
              :dependent => :destroy
 
