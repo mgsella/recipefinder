@@ -1,6 +1,6 @@
 class PreparationsController < ApplicationController
   def index
-    @preparations = Preparation.all
+    @preparations = Preparation.page(params[:page]).per(10)
 
     render("preparation_templates/index.html.erb")
   end
