@@ -80,13 +80,21 @@
 
         <!-- Display recipe.cuisine_id start -->
         <td>
-          <%= recipe.cuisine.name %>
+          <% if recipe.cuisine.present? %>
+            <a href="/cuisines/<%= recipe.cuisine.id %>">
+              <%= recipe.cuisine.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display recipe.cuisine_id end -->
 
         <!-- Display recipe.preparation_id start -->
         <td>
-          <%= recipe.preparation.name %>
+          <% if recipe.preparation.present? %>
+            <a href="/preparations/<%= recipe.preparation.id %>">
+              <%= recipe.preparation.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display recipe.preparation_id end -->
 
@@ -98,13 +106,21 @@
 
         <!-- Display recipe.food_id start -->
         <td>
-          <%= recipe.food.name %>
+          <% if recipe.food.present? %>
+            <a href="/categories/<%= recipe.food.id %>">
+              <%= recipe.food.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display recipe.food_id end -->
 
         <!-- Display recipe.user_id start -->
         <td>
-          <%= recipe.user.email %>
+          <% if recipe.user.present? %>
+            <a href="/users/<%= recipe.user.id %>">
+              <%= recipe.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display recipe.user_id end -->
 

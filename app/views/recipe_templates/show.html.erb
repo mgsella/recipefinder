@@ -43,7 +43,11 @@
       </dt>
       <!-- Display cuisine_id start -->
       <dd>
-        <%= @recipe.cuisine_id %>
+        <% if @recipe.cuisine.present? %>
+          <a href="/cuisines/<%= @recipe.cuisine_id %>">
+            <%= @recipe.cuisine.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display cuisine_id end -->
 
@@ -52,7 +56,11 @@
       </dt>
       <!-- Display preparation_id start -->
       <dd>
-        <%= @recipe.preparation_id %>
+        <% if @recipe.preparation.present? %>
+          <a href="/preparations/<%= @recipe.preparation_id %>">
+            <%= @recipe.preparation.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display preparation_id end -->
 
@@ -70,7 +78,11 @@
       </dt>
       <!-- Display food_id start -->
       <dd>
-        <%= @recipe.food_id %>
+        <% if @recipe.food.present? %>
+          <a href="/categories/<%= @recipe.food_id %>">
+            <%= @recipe.food.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display food_id end -->
 
@@ -79,7 +91,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @recipe.user_id %>
+        <% if @recipe.user.present? %>
+          <a href="/users/<%= @recipe.user_id %>">
+            <%= @recipe.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
