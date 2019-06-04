@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Preparation resource:
+
+  # CREATE
+  get("/preparations/new", { :controller => "preparations", :action => "new_form" })
+  post("/create_preparation", { :controller => "preparations", :action => "create_row" })
+
+  # READ
+  get("/preparations", { :controller => "preparations", :action => "index" })
+  get("/preparations/:id_to_display", { :controller => "preparations", :action => "show" })
+
+  # UPDATE
+  get("/preparations/:prefill_with_id/edit", { :controller => "preparations", :action => "edit_form" })
+  post("/update_preparation/:id_to_modify", { :controller => "preparations", :action => "update_row" })
+
+  # DELETE
+  get("/delete_preparation/:id_to_remove", { :controller => "preparations", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Cuisine resource:
 
   # CREATE
